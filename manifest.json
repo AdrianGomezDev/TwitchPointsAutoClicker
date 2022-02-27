@@ -8,6 +8,6 @@
     {
       "matches": ["*://*.twitch.tv/*"],
       "js": ["clicker.js"]
-  }
-],
+    }
+  ]
 }
