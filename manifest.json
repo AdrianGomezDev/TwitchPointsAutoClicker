@@ -1,6 +1,6 @@
 {
   "name": "Twitch Points Auto Clicker",
-  "description": "Automatically clicks on the twitch points box",
+  "description": "Automatically clicks on the twitch points box using injection",
   "version": "1.0",
   "manifest_version": 3,
 
