@@ -14,9 +14,11 @@ setInterval(()=> {
       let streamer = document.querySelector('CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title');
       /*let cookie = document.cookie; */
       //if yes update the cookie pValue
-      if(getCookieByName(streamer) != ""){
 
+      /*FIX!!!!checks if there is a value not if the name exists!!!!*/
+      if(getCookieValByName(streamer) != ""){
 
+        addPoints(streamer);
       }
       //if no create new entry into the cookie
       else{
@@ -41,10 +43,10 @@ function setCookieByName(streamerName){
 }
 
 function addPoints(streamerName){
-  
+  let value = getCookieByName(streamerName);
 }
 
-function getCookieByName(streamerName){
+function getCookieValByName(streamerName){
 
   let name = streamerName + "=";
   let cookie = decodeURIComponent(document.cookie);
