@@ -4,6 +4,21 @@
   "version": "1.0",
   "manifest_version": 3,
 
+  "action": {
+    "default_popup": "display.html",
+    "default_icon": "ttvicon.png"
+  },
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens display.html"
+    }
+  },
+
   "content_scripts": [
     {
       "matches": ["*://*.twitch.tv/*"],
