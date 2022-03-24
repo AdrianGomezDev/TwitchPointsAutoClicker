@@ -1,18 +1,33 @@
 // script that checks in 5 second intervals
 setInterval(()=> {
   // if points button exists then click on points button and log to console
-  if(document.querySelector('.ScCoreButton-sc-1qn4ixc-0.ScCoreButtonSuccess-sc-1qn4ixc-5.boGviw.iNPKuE')){
 
+  // checks if looping
+  console.log("5 seconds");
+
+  // if name element exists display it in the log
+  if(document.querySelector('.CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title')){
+    let x = document.querySelector('.CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title').innerHTML;
+
+    console.log(x);
+  }
+
+  // if points button exists then click on points button and log to console
+  if(document.querySelector('.ScCoreButton-sc-1qn4ixc-0.ScCoreButtonSuccess-sc-1qn4ixc-5.boGviw.iNPKuE')){
+    // clicks the points box
     document.querySelector('.ScCoreButton-sc-1qn4ixc-0.ScCoreButtonSuccess-sc-1qn4ixc-5.boGviw.iNPKuE').click();
 
     console.log("points box clicked!");
 
+
+
     //adjust points log
-    if(document.querySelector('CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title')){
+    if(document.querySelector('.CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title')){
 
       //check if streamer already in cookie
-      let streamer = document.querySelector('CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title');
-
+      // grabs streamer name
+      let streamer = document.querySelector('.CoreText-sc-cpl358-0.ScTitleText-sc-1gsen4-0.QTwAM.fakvtp.InjectLayout-sc-588ddc-0.iXtrXW.tw-title').innerHTML;
+      setCookieByName(streamer);
       //if yes update the cookie pValue
       if(getCookieValByName(streamer) != ""){
 
@@ -38,7 +53,7 @@ function setCookieByName(streamerName){
 
 // function to add points to value by name and repalce value in cookie
 function addPoints(streamerName){
-  let value = getCookieByName(streamerName);
+  let value = getCookieValByName(streamerName);
   let name = streamerName + "=";
   let cookie = decodeURIComponent(document.cookie);
   let cookieArr = cookie.split(';');
