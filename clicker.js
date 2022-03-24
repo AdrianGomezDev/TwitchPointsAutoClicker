@@ -41,6 +41,12 @@ setInterval(()=> {
     }
 
   }
+
+  //testing for streamerval in cookie
+  let value = getCookieValByName("MOONMOON");
+  console.log(value);
+
+
 } ,5000);
 
 
@@ -70,7 +76,7 @@ function addPoints(streamerName){
   }
 }
 
-// function to return the value of a name
+// function to return the value of a name (FIX: SOMETHING WRONG WITH FIRST RETURN VALUE)
 function getCookieValByName(streamerName){
 
   let name = streamerName + "=";
@@ -88,6 +94,7 @@ function getCookieValByName(streamerName){
     }
 
   }
+  // this is returning
   return "";
 
 }
